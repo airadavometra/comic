@@ -51,10 +51,8 @@ export const Layout = ({ children }: LayoutProps) => {
           isMobileMenuOpen={isMenuOpen}
           onToggleMobileMenu={toggleMobileMenu}
         />
-        <WidthContainer className={s.content}>
-          {children}
-          {isMenuOpen && <MobileMenu navigation={navigation} />}
-        </WidthContainer>
+        {isMenuOpen && <MobileMenu navigation={navigation} />}
+        <WidthContainer className={s.content}>{children}</WidthContainer>
         <Footer />
       </div>
     </>
