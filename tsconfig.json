@@ -23,9 +23,11 @@
     /* Alias */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@icons/*": ["src/icons/*"],
+      "@types/*": ["src/types/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["src"],

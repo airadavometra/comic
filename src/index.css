@@ -8,7 +8,8 @@
 }
 
 html,
-body {
+body,
+#root {
   max-width: 100vw;
   height: 100%;
 }
@@ -28,8 +29,8 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    color: var(--background-color);
-    background-color: var(--text-color);
+    --text-color: #ffffff;
+    --background-color: #000000;
   }
 }
 

@@ -6,19 +6,32 @@ import "./index.css";
 import { About } from "@pages/about/About";
 import { Comic } from "@pages/comic/Comic";
 import { Links } from "@pages/links/Links";
+import { Layout } from "@components/Layout/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Comic />,
+    element: (
+      <Layout>
+        <Comic />
+      </Layout>
+    ),
   },
   {
     path: "/about",
-    element: <About />,
+    element: (
+      <Layout>
+        <About />
+      </Layout>
+    ),
   },
   {
     path: "/links",
-    element: <Links />,
+    element: (
+      <Layout>
+        <Links />
+      </Layout>
+    ),
   },
 ]);
 
