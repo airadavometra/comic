@@ -33,7 +33,7 @@ export const Layout = ({ children }: LayoutProps) => {
     } else {
       setSelectedMenuItemId(undefined);
     }
-    //setMenuOpen(false);
+    setMenuOpen(false);
   }, [location]);
 
   const toggleMobileMenu = () => {

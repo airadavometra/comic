@@ -4,6 +4,7 @@
 }
 
 .textContainer {
+  padding-top: 16px;
   padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
