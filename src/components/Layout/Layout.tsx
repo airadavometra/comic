@@ -1,11 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import s from "./Layout.module.css";
 import { Footer } from "@components/Footer/Footer";
 import { Header } from "@components/Header/Header";
 import { NavigationItem } from "@/types/navigationItem";
+import { useLocation } from "react-router-dom";
 
 type LayoutProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const navigation: NavigationItem[] = [
@@ -15,14 +16,30 @@ const navigation: NavigationItem[] = [
 ];
 
 export const Layout = ({ children }: LayoutProps) => {
+  const location = useLocation();
+
+  const [selectedMenuItemId, setSelectedMenuItemId] = useState<
+    number | undefined
+  >();
+
+  useEffect(() => {
+    const selectedMenuItem = navigation.find(
+      (nav) => nav.path === location.pathname
+    );
+    if (selectedMenuItem) {
+      setSelectedMenuItemId(selectedMenuItem.id);
+    } else {
+      setSelectedMenuItemId(undefined);
+    }
+    console.log(location);
+  }, [location]);
+
   return (
     <div id="layout" className={s.layout}>
       <Header
         navigation={navigation}
+        selectedMenuItemId={selectedMenuItemId}
         onOpenMenu={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-        onMenuItemClick={function (newMenuItemId: number): void {
           throw new Error("Function not implemented.");
         }}
       />

@@ -4,20 +4,22 @@ import { Link } from "react-router-dom";
 import { VisuallyHidden } from "@components/VisuallyHidden/VisuallyHidden";
 import classNames from "classnames";
 import { NavigationItem } from "@/types/navigationItem";
+import { LinkWithUnderline } from "@components/LinkWithUnderline/LinkWithUnderline";
 
 type HeaderProps = {
   navigation: NavigationItem[];
+  selectedMenuItemId?: number;
   onOpenMenu(): void;
-  onMenuItemClick: (newMenuItemId: number) => void;
 };
 
 export const Header = ({
   navigation,
+  selectedMenuItemId,
   onOpenMenu,
-  onMenuItemClick,
 }: HeaderProps) => {
   return (
     <header className={s.header}>
+      <div className={s.banner}>New pages every Friday!</div>
       <WidthContainer className={s.widthContainer}>
         <Link className={s.logo} to={"/"}>
           LOGO
@@ -27,13 +29,14 @@ export const Header = ({
           <ul className={s.navigation}>
             {navigation.map(({ id, title, path }) => (
               <li className={s.linkContainer} key={id}>
-                <Link
-                  to={path}
-                  onClick={() => onMenuItemClick(id)}
-                  className={classNames(s.link)}
+                <LinkWithUnderline
+                  href={path}
+                  className={classNames(s.link, {
+                    [s.selected]: id === selectedMenuItemId,
+                  })}
                 >
                   {title}
-                </Link>
+                </LinkWithUnderline>
                 <div aria-hidden="true" className={s.hidden}>
                   {title}
                 </div>

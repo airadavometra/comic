@@ -2,6 +2,8 @@
 
 :root {
   --font: "Raleway", Verdana, serif;
+  --regular-font-weight: 400;
+  --semi-bold-font-weight: 600;
   --title-font: "Raleway", Arial, serif;
   --text-color: #000000;
   --background-color: #ffffff;

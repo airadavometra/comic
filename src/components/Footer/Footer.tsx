@@ -1,7 +1,7 @@
 import WidthContainer from "@components/WidthContainer/WidthContainer";
-import { Link } from "react-router-dom";
 import s from "./Footer.module.css";
 import { Heart } from "@icons/Heart";
+import { LinkWithUnderline } from "@components/LinkWithUnderline/LinkWithUnderline";
 
 export const Footer = () => {
   return (
@@ -11,14 +11,12 @@ export const Footer = () => {
           <span className={s.transparent}>
             Made with <Heart className={s.heart} /> by{" "}
           </span>
-          <Link
-            to="https://www.airadavometra.space/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkWithUnderline
+            href="https://www.airadavometra.space/"
             className={s.link}
           >
             Daria
-          </Link>
+          </LinkWithUnderline>
         </div>
         <span className={s.transparent}>2023</span>
       </WidthContainer>
