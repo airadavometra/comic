@@ -2,10 +2,12 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 @media (max-width: 48rem) {
   .widthContainer {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }

@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import "./reset.css";
 import "./index.css";
-import { About } from "@pages/about/About";
+import { AboutPage } from "@pages/AboutPage/AboutPage";
 import { Comic } from "@pages/comic/Comic";
 import { Links } from "@pages/links/Links";
 import { Layout } from "@components/Layout/Layout";
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Layout>
-          <About />
+          <AboutPage />
         </Layout>
         <Analytics />
       </>

@@ -5,6 +5,7 @@ import { Header } from "@components/Header/Header";
 import { NavigationItem } from "@/types/navigationItem";
 import { useLocation } from "react-router-dom";
 import MobileMenu from "@components/MobileMenu/MobileMenu";
+import WidthContainer from "@components/WidthContainer/WidthContainer";
 
 type LayoutProps = {
   children?: ReactNode;
@@ -50,10 +51,10 @@ export const Layout = ({ children }: LayoutProps) => {
           isMobileMenuOpen={isMenuOpen}
           onToggleMobileMenu={toggleMobileMenu}
         />
-        <main className={s.main}>
+        <WidthContainer className={s.content}>
           {children}
           {isMenuOpen && <MobileMenu navigation={navigation} />}
-        </main>
+        </WidthContainer>
         <Footer />
       </div>
     </>
