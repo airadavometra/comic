@@ -43,6 +43,7 @@
   height: 0;
   visibility: hidden;
   font-weight: var(--semi-bold-font-weight);
+  text-transform: uppercase;
 }
 .link:hover,
 .link:focus,
