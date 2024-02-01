@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import "./reset.css";
 import "./index.css";
 import { About } from "@pages/about/About";
@@ -12,25 +13,34 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Layout>
-        <Comic />
-      </Layout>
+      <>
+        <Layout>
+          <Comic />
+        </Layout>
+        <Analytics />
+      </>
     ),
   },
   {
     path: "/about",
     element: (
-      <Layout>
-        <About />
-      </Layout>
+      <>
+        <Layout>
+          <About />
+        </Layout>
+        <Analytics />
+      </>
     ),
   },
   {
     path: "/links",
     element: (
-      <Layout>
-        <Links />
-      </Layout>
+      <>
+        <Layout>
+          <Links />
+        </Layout>
+        <Analytics />
+      </>
     ),
   },
 ]);
