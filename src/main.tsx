@@ -6,7 +6,7 @@ import "./reset.css";
 import "./index.css";
 import { AboutPage } from "@pages/AboutPage/AboutPage";
 import { Comic } from "@pages/comic/Comic";
-import { Links } from "@pages/links/Links";
+import { LinksPage } from "@pages/LinksPage/LinksPage";
 import { Layout } from "@components/Layout/Layout";
 
 const router = createBrowserRouter([
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Layout>
-          <Links />
+          <LinksPage />
         </Layout>
         <Analytics />
       </>

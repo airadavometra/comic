@@ -1,6 +1,7 @@
-.pageContainer {
+.main {
   display: flex;
   gap: min(3rem, 64px);
+  justify-content: space-between;
 }
 .content {
   display: flex;
@@ -12,10 +13,6 @@
   flex-direction: column;
   gap: min(2rem, 48px);
 }
-.title {
-  font-size: clamp(1.5rem, 0.6111rem + 1.8519vw, 2rem);
-  font-weight: var(--semi-bold-font-weight);
-}
 .aboutCreator {
   display: flex;
   gap: min(2rem, 48px);
@@ -26,17 +23,10 @@
   height: 200px;
   background: #d9d9d9;
 }
-.text {
-  font-size: clamp(1rem, 0.5556rem + 0.9259vw, 1.25rem);
-}
-.subtitle {
-  font-size: clamp(1rem, 0.5556rem + 0.9259vw, 1.25rem);
-  font-weight: var(--semi-bold-font-weight);
-}
 .chaptersTitle {
   display: flex;
   flex-direction: column;
-  gap: min(0.75rem, 16px);
+  gap: min(0.5rem, 12px);
 }
 .chaptersList {
   padding: 0;
@@ -48,11 +38,11 @@
 .chapter {
   display: flex;
   flex-direction: column;
-  gap: min(0.75rem, 16px);
+  gap: min(0.5rem, 12px);
 }
 
 @media (max-width: 48rem) {
-  .pageContainer,
+  .main,
   .aboutCreator {
     flex-direction: column;
   }

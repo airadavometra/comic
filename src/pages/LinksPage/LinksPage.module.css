@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  gap: min(3rem, 64px);
+  justify-content: space-between;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: min(3rem, 64px);
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.5rem, 32px);
+}
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.5rem, 12px);
+}
+.link {
+  display: inline-flex;
+  gap: 0.5rem;
+  font-size: clamp(1rem, 0.5556rem + 0.9259vw, 1.25rem);
+}
+.logo {
+  width: clamp(1.125rem, 0.4583rem + 1.3889vw, 1.5rem);
+}
+@media (max-width: 48rem) {
+  .main {
+    flex-direction: column;
+  }
+}
