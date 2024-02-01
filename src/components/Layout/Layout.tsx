@@ -4,6 +4,7 @@ import { Footer } from "@components/Footer/Footer";
 import { Header } from "@components/Header/Header";
 import { NavigationItem } from "@/types/navigationItem";
 import { useLocation } from "react-router-dom";
+import MobileMenu from "@components/MobileMenu/MobileMenu";
 
 type LayoutProps = {
   children?: ReactNode;
@@ -18,6 +19,7 @@ const navigation: NavigationItem[] = [
 export const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
 
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const [selectedMenuItemId, setSelectedMenuItemId] = useState<
     number | undefined
   >();
@@ -31,20 +33,29 @@ export const Layout = ({ children }: LayoutProps) => {
     } else {
       setSelectedMenuItemId(undefined);
     }
-    console.log(location);
+    //setMenuOpen(false);
   }, [location]);
 
+  const toggleMobileMenu = () => {
+    setMenuOpen((prev) => !prev);
+    document.body.classList.toggle("frozen");
+  };
+
   return (
-    <div id="layout" className={s.layout}>
-      <Header
-        navigation={navigation}
-        selectedMenuItemId={selectedMenuItemId}
-        onOpenMenu={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
-      {children}
-      <Footer />
-    </div>
+    <>
+      <div id="layout" className={s.layout}>
+        <Header
+          navigation={navigation}
+          selectedMenuItemId={selectedMenuItemId}
+          isMobileMenuOpen={isMenuOpen}
+          onToggleMobileMenu={toggleMobileMenu}
+        />
+        <main className={s.main}>
+          {children}
+          {isMenuOpen && <MobileMenu navigation={navigation} />}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };

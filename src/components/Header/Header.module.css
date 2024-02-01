@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 .widthContainer {
+  padding: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,12 +21,8 @@
   background-color: var(--text-color);
 }
 .logo {
-  width: 40px;
-  height: 40px;
-  background-size: 40px 40px;
 }
 .navigation {
-  padding: min(1.5rem, 32px) 0;
   display: flex;
   align-items: center;
   gap: min(2rem, 48px);
@@ -72,19 +69,21 @@
   font-weight: var(--semi-bold-font-weight);
   display: none;
 }
+.menu {
+  width: 1.5rem;
+}
 @media (max-width: 48rem) {
   .widthContainer {
-    padding: min(1rem, 24px);
+    padding: 0;
+  }
+  .logo,
+  .menuButton {
+    padding: 16px;
   }
   .navigation {
     display: none;
   }
   .menuButton {
     display: block;
-  }
-  .logo {
-    width: 32px;
-    height: 32px;
-    background-size: 32px 32px;
   }
 }
