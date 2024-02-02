@@ -35,12 +35,14 @@ export const Layout = ({ children }: LayoutProps) => {
       setSelectedMenuItemId(undefined);
     }
     setMenuOpen(false);
-    document.body.classList.toggle("frozen");
   }, [location]);
+
+  useEffect(() => {
+    document.body.classList.toggle("frozen");
+  }, [isMenuOpen]);
 
   const toggleMobileMenu = () => {
     setMenuOpen((prev) => !prev);
-    document.body.classList.toggle("frozen");
   };
 
   return (
