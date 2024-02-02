@@ -7,6 +7,7 @@ import { Arrow } from "@icons/Arrow";
 import { Instagram } from "@icons/Instagram";
 import { Youtube } from "@icons/Youtube";
 import { Mail } from "@icons/Mail";
+import classNames from "classnames";
 
 export const LinksPage = () => {
   return (
@@ -121,9 +122,9 @@ export const LinksPage = () => {
           <ul className={s.linksList}>
             <li className={s.linkContainer}>
               <Mail className={s.logo} />
-              <LinkWithUnderline href={""} className={s.link}>
-                Email
-              </LinkWithUnderline>
+              <span className={classNames(s.link, s.email)}>
+                example@mail.com
+              </span>
             </li>
           </ul>
         </section>

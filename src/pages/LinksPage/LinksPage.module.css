@@ -35,6 +35,9 @@
 .logo {
   width: clamp(1.125rem, 0.4583rem + 1.3889vw, 1.5rem);
 }
+.email {
+  font-weight: var(--semi-bold-font-weight);
+}
 @media (max-width: 48rem) {
   .main {
     flex-direction: column;
