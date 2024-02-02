@@ -38,6 +38,11 @@ export const Layout = ({ children }: LayoutProps) => {
   }, [location]);
 
   useEffect(() => {
+    // needed for initial load
+    document.body.classList.toggle("frozen");
+  }, []);
+
+  useEffect(() => {
     document.body.classList.toggle("frozen");
   }, [isMenuOpen]);
 
