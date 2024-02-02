@@ -32,7 +32,7 @@
 .link {
   font-size: clamp(1rem, 0.5556rem + 0.9259vw, 1.25rem);
 }
-.logo {
+.icon {
   width: clamp(1.125rem, 0.4583rem + 1.3889vw, 1.5rem);
 }
 .email {

@@ -8,39 +8,39 @@ import { AboutPage } from "@pages/AboutPage/AboutPage";
 import { ComicPage } from "@pages/ComicPage/ComicPage";
 import { LinksPage } from "@pages/LinksPage/LinksPage";
 import { Layout } from "@components/Layout/Layout";
+import { NotFoundPage } from "@pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <>
-        <Layout>
-          <ComicPage />
-        </Layout>
-        <Analytics />
-      </>
+      <Layout>
+        <ComicPage />
+      </Layout>
     ),
   },
   {
     path: "/about",
     element: (
-      <>
-        <Layout>
-          <AboutPage />
-        </Layout>
-        <Analytics />
-      </>
+      <Layout>
+        <AboutPage />
+      </Layout>
     ),
   },
   {
     path: "/links",
     element: (
-      <>
-        <Layout>
-          <LinksPage />
-        </Layout>
-        <Analytics />
-      </>
+      <Layout>
+        <LinksPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Layout>
+        <NotFoundPage />
+      </Layout>
     ),
   },
 ]);
@@ -48,5 +48,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </React.StrictMode>
 );

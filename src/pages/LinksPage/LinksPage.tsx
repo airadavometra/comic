@@ -17,7 +17,7 @@ export const LinksPage = () => {
           <Title>RSS Feed</Title>
           <ul className={s.linksList}>
             <li className={s.linkContainer}>
-              <Rss className={s.logo} />
+              <Rss className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 RSS Link
               </LinkWithUnderline>
@@ -34,13 +34,13 @@ export const LinksPage = () => {
           </div>
           <ul className={s.linksList}>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 WebToon
               </LinkWithUnderline>
             </li>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Tapas
               </LinkWithUnderline>
@@ -57,31 +57,31 @@ export const LinksPage = () => {
           </div>
           <ul className={s.linksList}>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Tip Jar
               </LinkWithUnderline>
             </li>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Patreon
               </LinkWithUnderline>
             </li>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Gumroad
               </LinkWithUnderline>
             </li>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Amazon
               </LinkWithUnderline>
             </li>
             <li className={s.linkContainer}>
-              <Arrow className={s.logo} />
+              <Arrow className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Art prints
               </LinkWithUnderline>
@@ -98,13 +98,13 @@ export const LinksPage = () => {
           </div>
           <ul className={s.linksList}>
             <li className={s.linkContainer}>
-              <Instagram className={s.logo} />
+              <Instagram className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 Instagram
               </LinkWithUnderline>
             </li>
             <li className={s.linkContainer}>
-              <Youtube className={s.logo} />
+              <Youtube className={s.icon} />
               <LinkWithUnderline href={""} className={s.link}>
                 YouTube
               </LinkWithUnderline>
@@ -121,7 +121,7 @@ export const LinksPage = () => {
           </div>
           <ul className={s.linksList}>
             <li className={s.linkContainer}>
-              <Mail className={s.logo} />
+              <Mail className={s.icon} />
               <span className={classNames(s.link, s.email)}>
                 example@mail.com
               </span>
