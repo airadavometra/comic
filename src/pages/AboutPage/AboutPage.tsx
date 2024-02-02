@@ -37,7 +37,7 @@ export const AboutPage = () => {
         <section className={s.section}>
           <div className={s.chaptersTitle}>
             <Title>The story so far...</Title>
-            <span className={s.subtitle}>SPOILER ALERT!</span>
+            <Subtitle>SPOILER ALERT!</Subtitle>
           </div>
           <ul className={s.chaptersList}>
             <li className={s.chapter}>
