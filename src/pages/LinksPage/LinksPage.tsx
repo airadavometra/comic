@@ -14,10 +14,14 @@ export const LinksPage = () => {
       <div className={s.content}>
         <section className={s.section}>
           <Title>RSS Feed</Title>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Rss className={s.logo} />
-            RSS Link
-          </LinkWithUnderline>
+          <ul className={s.linksList}>
+            <li className={s.linkContainer}>
+              <Rss className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                RSS Link
+              </LinkWithUnderline>
+            </li>
+          </ul>
         </section>
         <section className={s.section}>
           <div className={s.sectionTitle}>
@@ -27,14 +31,20 @@ export const LinksPage = () => {
               them, please subscribe!
             </Paragraph>
           </div>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            WebToon
-          </LinkWithUnderline>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            Tapas
-          </LinkWithUnderline>
+          <ul className={s.linksList}>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                WebToon
+              </LinkWithUnderline>
+            </li>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Tapas
+              </LinkWithUnderline>
+            </li>
+          </ul>
         </section>
         <section className={s.section}>
           <div className={s.sectionTitle}>
@@ -44,26 +54,38 @@ export const LinksPage = () => {
               there&apos;s lots of ways to help!
             </Paragraph>
           </div>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            Tip Jar
-          </LinkWithUnderline>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            Patreon
-          </LinkWithUnderline>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            Gumroad
-          </LinkWithUnderline>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            Amazon
-          </LinkWithUnderline>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Arrow className={s.logo} />
-            Art prints
-          </LinkWithUnderline>
+          <ul className={s.linksList}>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Tip Jar
+              </LinkWithUnderline>
+            </li>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Patreon
+              </LinkWithUnderline>
+            </li>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Gumroad
+              </LinkWithUnderline>
+            </li>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Amazon
+              </LinkWithUnderline>
+            </li>
+            <li className={s.linkContainer}>
+              <Arrow className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Art prints
+              </LinkWithUnderline>
+            </li>
+          </ul>
         </section>
         <section className={s.section}>
           <div className={s.sectionTitle}>
@@ -73,14 +95,20 @@ export const LinksPage = () => {
               tips. You don&apos;t wanna miss it!
             </Paragraph>
           </div>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Instagram className={s.logo} />
-            Instagram
-          </LinkWithUnderline>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Youtube className={s.logo} />
-            YouTube
-          </LinkWithUnderline>
+          <ul className={s.linksList}>
+            <li className={s.linkContainer}>
+              <Instagram className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Instagram
+              </LinkWithUnderline>
+            </li>
+            <li className={s.linkContainer}>
+              <Youtube className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                YouTube
+              </LinkWithUnderline>
+            </li>
+          </ul>
         </section>
         <section className={s.section}>
           <div className={s.sectionTitle}>
@@ -90,10 +118,14 @@ export const LinksPage = () => {
               chat with me? Simply email me!
             </Paragraph>
           </div>
-          <LinkWithUnderline href={""} className={s.link}>
-            <Mail className={s.logo} />
-            Email
-          </LinkWithUnderline>
+          <ul className={s.linksList}>
+            <li className={s.linkContainer}>
+              <Mail className={s.logo} />
+              <LinkWithUnderline href={""} className={s.link}>
+                Email
+              </LinkWithUnderline>
+            </li>
+          </ul>
         </section>
       </div>
       <div>Ads</div>

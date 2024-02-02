@@ -25,6 +25,7 @@
 .logo {
 }
 .navigation {
+  padding: 0;
   display: flex;
   align-items: center;
   gap: min(2rem, 48px);
