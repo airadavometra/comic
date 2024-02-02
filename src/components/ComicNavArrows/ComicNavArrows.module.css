@@ -1,0 +1,13 @@
+.navigationButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+.navigationButton {
+}
+.navigationButtonIcon {
+  width: 3rem;
+  stroke-width: 1px;
+}
+.navigationButtonIconRotated {
+  transform: rotate(180deg);
+}

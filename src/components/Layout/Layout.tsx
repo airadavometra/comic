@@ -35,6 +35,7 @@ export const Layout = ({ children }: LayoutProps) => {
       setSelectedMenuItemId(undefined);
     }
     setMenuOpen(false);
+    document.body.classList.toggle("frozen");
   }, [location]);
 
   const toggleMobileMenu = () => {

@@ -1,0 +1,10 @@
+.pagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, -1.2778rem + 3.7037vw, 1.5rem);
+}
+.imagePlaceholder {
+  flex-shrink: 0;
+  aspect-ratio: 2/3;
+  background: #d9d9d9;
+}

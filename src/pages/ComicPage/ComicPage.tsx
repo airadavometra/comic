@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import s from "./ComicPage.module.css";
-import { OnePageView } from "./OnePageView";
-import { FullChapterView } from "./FullChapterView";
+import { ComicViewer } from "../../components/ComicViewer/ComicViewer";
 import { ReadingMode } from "@/types/readingMode";
-import { Listbox } from "@headlessui/react";
 import { comicInfo } from "@/data/comic";
+import { ComicNavArrows } from "@components/ComicNavArrows/ComicNavArrows";
+import { DropdownList } from "@components/DropdownList/DropdownList";
+import { Arrow } from "@icons/Arrow";
 
 export const ComicPage = () => {
   const [readingMode, setReadingMode] = useState<ReadingMode>(() => {
@@ -28,66 +29,112 @@ export const ComicPage = () => {
 
   useEffect(() => {
     localStorage.setItem("chapter", chapter.toString());
-    setPage(1);
   }, [chapter]);
 
   useEffect(() => {
-    // Add logic for the last/first page in chapter if it's onepage reading mode.
-    // In this case we need to change chapter too. But it's better to move it into onclick
     localStorage.setItem("page", page.toString());
   }, [page]);
 
   return (
     <main className={s.main}>
-      <div className={s.controllers}>
-        <Listbox value={readingMode} onChange={setReadingMode}>
-          <Listbox.Label>Reading mode:</Listbox.Label>
-          <Listbox.Button>{readingMode}</Listbox.Button>
-          <Listbox.Options>
-            <Listbox.Option key="onepage" value="onepage">
-              One page
-            </Listbox.Option>
-            <Listbox.Option key="fullchapter" value="fullchapter">
-              Full chapter
-            </Listbox.Option>
-          </Listbox.Options>
-        </Listbox>
-
-        <Listbox
-          value={readingMode}
-          onChange={(value) => setChapter(Number(value))}
-        >
-          <Listbox.Label>Chapter:</Listbox.Label>
-          <Listbox.Button>{chapter}</Listbox.Button>
-          <Listbox.Options>
-            {comicInfo.chapters.map((chapter) => (
-              <Listbox.Option key={chapter.id} value={chapter.id}>
-                {chapter.title}
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Listbox>
+      <section className={s.controllers}>
+        <DropdownList
+          value={undefined}
+          onChange={setReadingMode}
+          label="Reading mode:"
+          displayValue={readingMode === "onepage" ? "One page" : "Full chapter"}
+          options={[
+            { key: "onepage", value: "onepage", displayValue: "One page" },
+            {
+              key: "fullchapter",
+              value: "fullchapter",
+              displayValue: "Full chapter",
+            },
+          ]}
+        />
+        <DropdownList
+          value={chapter}
+          onChange={(value) => {
+            setChapter(Number(value));
+            setPage(1);
+          }}
+          label="Chapter:"
+          displayValue={chapter}
+          options={comicInfo.chapters.map((chapter) => ({
+            key: chapter.id,
+            value: chapter.id,
+            displayValue: chapter.title,
+          }))}
+          className={s.topListbox}
+        />
         {readingMode === "onepage" && (
-          <Listbox
-            value={readingMode}
+          <DropdownList
+            value={page}
             onChange={(value) => setPage(Number(value))}
-          >
-            <Listbox.Label>Page:</Listbox.Label>
-            <Listbox.Button>{page}</Listbox.Button>
-            <Listbox.Options>
-              {Array.from(
-                { length: comicInfo.chapters[chapter - 1].numberOfPages },
-                (_, i) => i + 1
-              ).map((page) => (
-                <Listbox.Option key={page} value={page}>
-                  {page}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
-          </Listbox>
+            label="Page:"
+            displayValue={page}
+            options={Array.from(
+              {
+                length: comicInfo.chapters[chapter - 1].numberOfPages,
+              },
+              (_, i) => i + 1
+            ).map((page) => ({
+              key: page,
+              value: page,
+              displayValue: `Page ${page}`,
+            }))}
+          />
         )}
-      </div>
-      {readingMode === "onepage" ? <OnePageView /> : <FullChapterView />}
+        <ComicNavArrows
+          readingMode={readingMode}
+          currentChapter={chapter}
+          currentPage={page}
+          updateCurrentChapter={setChapter}
+          updateCurrentPage={setPage}
+          className={s.topArrows}
+        />
+      </section>
+      <ComicViewer
+        readingMode={readingMode}
+        currentChapter={chapter}
+        currentPage={page}
+      />
+      {readingMode === "fullchapter" && (
+        <div className={s.bottomControllers}>
+          <button
+            className={s.button}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            <Arrow className={s.buttonIcon} />
+            Back to top
+          </button>
+          <DropdownList
+            value={chapter}
+            onChange={(value) => {
+              setChapter(Number(value));
+              setPage(1);
+            }}
+            label="Chapter:"
+            displayValue={chapter}
+            options={comicInfo.chapters.map((chapter) => ({
+              key: chapter.id,
+              value: chapter.id,
+              displayValue: chapter.title,
+            }))}
+            className={s.bottomListbox}
+          />
+          <ComicNavArrows
+            readingMode={readingMode}
+            currentChapter={chapter}
+            currentPage={page}
+            updateCurrentChapter={setChapter}
+            updateCurrentPage={setPage}
+            className={s.bottomArrows}
+          />
+        </div>
+      )}
       <div>Ads</div>
     </main>
   );
