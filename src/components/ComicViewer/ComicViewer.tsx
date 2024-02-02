@@ -25,7 +25,7 @@ export const ComicViewer = ({
 
   return (
     <section className={s.pagesContainer}>
-      {pageUrls.map((pageUrl) => (
+      {pageUrls.map((_pageUrl) => (
         <div className={s.imagePlaceholder} />
       ))}
     </section>
