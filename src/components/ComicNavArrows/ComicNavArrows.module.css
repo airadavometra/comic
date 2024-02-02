@@ -3,6 +3,14 @@
   gap: 0.5rem;
 }
 .navigationButton {
+  opacity: 0.8;
+}
+.navigationButton:hover {
+  opacity: 1;
+  background-color: var(--text-color-transparent);
+}
+.navigationButton:focus {
+  opacity: 1;
 }
 .navigationButtonIcon {
   width: 3rem;

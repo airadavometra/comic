@@ -6,7 +6,9 @@
   --semi-bold-font-weight: 600;
   --title-font: "Raleway", Arial, serif;
   --text-color: #000000;
+  --text-color-transparent: #0000001a;
   --background-color: #ffffff;
+  --background-color-transparent: #ffffff1a;
 }
 
 html,
@@ -32,7 +34,9 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     --text-color: #ffffff;
+    --text-color-transparent: #ffffff1a;
     --background-color: #000000;
+    --background-color-transparent: #0000001a;
   }
 }
 

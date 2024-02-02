@@ -27,7 +27,15 @@
   align-items: center;
   font-size: clamp(1rem, 0.1111rem + 1.8519vw, 1.5rem);
   white-space: nowrap;
-  border: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color);
+  opacity: 0.8;
+}
+.button:hover {
+  opacity: 1;
+  background-color: var(--text-color-transparent);
+}
+.button:focus {
+  opacity: 1;
 }
 .buttonIcon {
   width: clamp(1.125rem, 0.0139rem + 2.3148vw, 1.75rem);
@@ -56,6 +64,7 @@
     padding: 0.5rem 0.75rem;
     margin-left: auto;
     order: 3;
+    opacity: 1;
   }
   .buttonIcon {
     stroke-width: 1px;
