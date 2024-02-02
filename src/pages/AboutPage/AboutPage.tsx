@@ -2,6 +2,7 @@ import { Title } from "@components/Title/Title";
 import s from "./AboutPage.module.css";
 import { Paragraph } from "@components/Paragraph/Paragraph";
 import { Subtitle } from "@components/Subtitle/Subtitle";
+import { comicInfo } from "@/data/comic";
 
 export const AboutPage = () => {
   return (
@@ -9,29 +10,13 @@ export const AboutPage = () => {
       <div className={s.content}>
         <section className={s.section}>
           <Title>Synopsis</Title>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Paragraph>
+          <Paragraph>{comicInfo.synopsis}</Paragraph>
         </section>
         <section className={s.section}>
           <Title>Creator</Title>
           <div className={s.aboutCreator}>
             <div className={s.imagePlaceholder} />
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Paragraph>
+            <Paragraph>{comicInfo.creator.bio}</Paragraph>
           </div>
         </section>
         <section className={s.section}>
@@ -40,30 +25,12 @@ export const AboutPage = () => {
             <Subtitle>SPOILER ALERT!</Subtitle>
           </div>
           <ul className={s.chaptersList}>
-            <li className={s.chapter}>
-              <Subtitle>Chapter 1</Subtitle>
-              <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Paragraph>
-            </li>
-            <li className={s.chapter}>
-              <Subtitle>Chapter 2</Subtitle>
-              <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Paragraph>
-            </li>
+            {comicInfo.chapters.map((chapter) => (
+              <li className={s.chapter} key={chapter.id}>
+                <Subtitle>{chapter.title}</Subtitle>
+                <Paragraph>{chapter.description}</Paragraph>
+              </li>
+            ))}
           </ul>
         </section>
       </div>
