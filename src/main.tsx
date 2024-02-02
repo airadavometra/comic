@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./reset.css";
 import "./index.css";
 import { AboutPage } from "@pages/AboutPage/AboutPage";
-import { Comic } from "@pages/comic/Comic";
+import { ComicPage } from "@pages/ComicPage/ComicPage";
 import { LinksPage } from "@pages/LinksPage/LinksPage";
 import { Layout } from "@components/Layout/Layout";
 
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Layout>
-          <Comic />
+          <ComicPage />
         </Layout>
         <Analytics />
       </>
